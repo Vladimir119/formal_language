@@ -1,2 +1,3 @@
 # formal_language_2023
-There are practical tasks by formal language in 2023 in this repository.
+В это репозитории хранятся практический задание п оформалкам 2023 года.
+В вветке earley хранится алгоритм Эрли вместе с необходимым описание для его запуска и теста.
