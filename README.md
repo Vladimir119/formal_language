@@ -17,7 +17,9 @@ test_1.txt для grammar_1.txt. test_2.txt для grammar_2.txt.
 Для запуска вам необходимо провести следующие процедуры:
 Скопировать репозиторий к себе по SSH ключу:
 ```
-git@github.com:Vladimir119/formal_language_2023.git
+git clone git@github.com:Vladimir119/formal_language_2023.git
+cd formal_language_2023/
+git checkout earley
 ```
 
 Если вы запускаете программу впервые необходимо собрать проект. Для этого запустите 
