@@ -1,0 +1,11 @@
+2 2 7
+AB
+ab
+A->AB
+A->a
+A->aA
+A->
+B->bB
+B->b
+B->
+A

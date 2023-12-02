@@ -1,9 +1,9 @@
 #include "parser.h"
 
-class Earley{
+class Earley {
  private:
 
-  struct Situation{
+  struct Situation {
     Rule rule;
     int point_position;
     int count_of_read;
@@ -18,7 +18,7 @@ class Earley{
     };
   };
 
-  struct Layer{
+  struct Layer {
     std::unordered_set<Situation, Situation::Hash> situations;
     std::map<char, std::vector<Situation>> situation_with_dot_before_noterm;
     std::vector<Situation> ordered_situation;
