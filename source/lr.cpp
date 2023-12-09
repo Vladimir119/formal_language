@@ -206,8 +206,15 @@ void LR::BuildLRTable() {
             if (grammar_.is_latter(cur_latter)) action = Action(ActionEnum::SHIFT, next_vertex);
             else action = Action(ActionEnum::GOTO, next_vertex);
 
-            if (!table[vertex.index].contains(cur_latter))
-                table[vertex.index][cur_latter] = action;
+            try  {
+                if (table[vertex.index].contains(cur_latter))
+                    throw 1;
+            } catch(...) {
+                std::cerr << "NO LR(1) GRAMMAR!!" << std::endl;
+                throw;
+            }
+
+            table[vertex.index][cur_latter] = action;
         }
     } // goto and shift
 
@@ -216,10 +223,14 @@ void LR::BuildLRTable() {
             if (item.point_position != item.rule.right.size()) continue;
             int index_of_rule = indexes_rules[item.rule];
             
-            if (table[vertex.index].contains(item.latter_after)) {
-                std::cout << "NO RL(1) Grammar!!!\n";
-                break;
+            try {
+                if (table[vertex.index].contains(item.latter_after))
+                    throw 1;
+            } catch(...) {
+                std::cerr << "NO LR(1) GRAMMAR!!" << std::endl;
+                throw;
             }
+            
             table[vertex.index][item.latter_after] = Action(ActionEnum::REDUCE, index_of_rule);
         }
     } // reduse
